@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1056" height="816" viewBox="0 0 1056 816">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 412.5px;
+        filter: url(#filter);
+        fill: #fff;
+        text-anchor: middle;
+        font-family: "FC SaveSpace";
+        text-transform: uppercase;
+      }
+    </style>
+    <filter id="filter" x="66" y="269" width="941" height="213" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="-2.853" dy="0.927" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+      <feGaussianBlur result="blur-2" in="SourceAlpha"/>
+      <feFlood result="flood-2"/>
+      <feComposite result="composite-2" operator="out" in2="blur-2"/>
+      <feOffset result="offset-2"/>
+      <feComposite result="composite-3" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-2" mode="multiply" in2="blend"/>
+    </filter>
+  </defs>
+  <text id="NONG-HIN" class="cls-1" x="540" y="474"><tspan x="540">NONG-HIN</tspan></text>
+</svg>
