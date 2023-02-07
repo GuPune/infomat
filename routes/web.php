@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('admin/login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('admin/custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
+
+Route::get('/logout', [CustomAuthController::class, 'perform'])->name('logout.perform');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
+
 });
