@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use Illuminate\Http\Request;
 
 class NewController extends Controller
@@ -13,7 +14,15 @@ class NewController extends Controller
      */
     public function index()
     {
-        //
+
+
+        $data = Content::whereIn('status', ['Y', 'N'])->where('type','1')->orderBy('seq')->get();
+        $count = Content::whereIn('status', ['Y', 'N'])->where('type','1')->count();
+$min = Content::whereIn('status', ['Y', 'N'])->where('type','1')->min('seq');
+$max = Content::whereIn('status', ['Y', 'N'])->where('type','1')->max('seq');
+
+
+        return view('new.index')->with('data',$data)->with('min',$min)->with('max',$max)->with('count',$count);
     }
 
     /**
@@ -24,6 +33,10 @@ class NewController extends Controller
     public function create()
     {
         //
+
+
+
+        return view('new.form');
     }
 
     /**
@@ -35,6 +48,31 @@ class NewController extends Controller
     public function store(Request $request)
     {
         //
+
+
+        $max = Content::where('type',1)->max('seq');
+
+
+$ins = Content::create([
+    'title_th' => $request->title_th,
+    'title_en' => $request->title_en,
+    'desciption_th' => $request->desciption_th,
+    'desciption_en' => $request->desciption_en,
+    'keyword' => $request->keyword,
+    'detail_th' => $request->detail_th,
+    'detail_en' => $request->detail_en,
+    'image' => $request->image,
+    'type' => 1,
+    'seq' => $max+1,
+    'status' => $request->status
+]);
+
+
+
+   return response()->json([
+    'msg_return' => 'บันทึกสำเร็จ',
+    'code_return' => 1,
+]);
     }
 
     /**
@@ -80,5 +118,25 @@ class NewController extends Controller
     public function destroy($id)
     {
         //
+
+    $vat = Content::where('id',$id)->first();
+    $seq = Content::where('seq','>',$vat->seq)->where('type',1)->get();
+    $datase = $vat->seq;
+    foreach ($seq as $key => $seq) {
+        $updateseq = Content::where('id',$seq->id)->update([
+            'seq' => $datase
+        ]);
+
+        $datase++;
+    }
+
+ $delete = Content::where('id',$id)->delete();
+
+
+
+    return response()->json([
+        'msg_return' => 'ลบสำเร็จ',
+        'code_return' => 1,
+    ]);
     }
 }

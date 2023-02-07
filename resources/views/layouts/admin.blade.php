@@ -86,10 +86,11 @@
       <!-- page-body-wrapper ends -->
     </div>
 
+    <script src="{{ mix('/js/app.js') }}"></script>
 
     <script src="{{ asset('cms/vendors/js/vendor.bundle.base.js') }}"></script>
-
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
 
 
     {{-- @include('templateadmin.script') --}}

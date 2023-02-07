@@ -19,10 +19,11 @@ class CreateContentTable extends Migration
             $table->text('title_en')->nullable();
             $table->text('detail_th')->nullable();
             $table->text('detail_en')->nullable();
+            $table->text('desciption_en')->nullable();
+            $table->text('desciption_th')->nullable();
             $table->text('url')->nullable();
             $table->text('image')->nullable();
-            $table->text('name_th')->nullable();
-            $table->text('name_en')->nullable();
+            $table->text('keyword')->nullable();
             $table->string('status')->nullable();
             $table->string('type')->nullable();
             $table->integer('seq')->nullable();
