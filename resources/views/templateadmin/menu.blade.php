@@ -53,7 +53,6 @@
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="/admin/new/create">แบบฟอร์ม</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/new">ข้อมูลข่าว</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/new-setting">ตั้งค่า</a></li>
             </ul>
           </div>
       </li>
@@ -63,12 +62,25 @@
           <span class="menu-title">กิจกรรมของเรา</span>
           <i class="menu-arrow"></i>
         </a>
-
         <div class="collapse" id="form-bs">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/admin/bussines/create">แบบฟอร์ม</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/bussines">ข้อมูลข่าว</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/bussines-setting">ตั้งค่า</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/activity/create">แบบฟอร์ม</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/activity">ข้อมูลกิจกรรม</a></li>
+            </ul>
+          </div>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#form-video" aria-expanded="false" aria-controls="form-video">
+         <i class="typcn typcn-th-small-outline menu-icon"></i>
+          <span class="menu-title">Video</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="form-video">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="/admin/video/create">แบบฟอร์ม</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/video">ข้อมูล</a></li>
             </ul>
           </div>
       </li>
@@ -76,7 +88,7 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-product" aria-expanded="false" aria-controls="form-product">
             <i class="typcn typcn-globe-outline menu-icon"></i>
-          <span class="menu-title">สินค้าและบริการ</span>
+          <span class="menu-title">ผลิตภัณฑ์</span>
           <i class="menu-arrow"></i>
         </a>
 

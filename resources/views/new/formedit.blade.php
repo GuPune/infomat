@@ -14,76 +14,73 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">แก้ไข้แบบฟอร์ม ข่าวสาร</h4>
+            <form method="POST" action="{{ route('new.update',$content->id) }}" >
+          <h4 class="card-title">แก้ไขแบบฟอร์ม ข่าวสาร</h4>
+          <input type="hidden" id="_token" value="{{ csrf_token() }}">
+          {{ method_field('PUT') }}
+          {{ csrf_field() }}
+          <input type="hidden" class="form-control" id="id" placeholder="ID" value="{{$content->id}}">
             <div class="form-group">
-                <input type="hidden" class="form-control" id="id" value="{{$data->id}}">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  (ไทย)</label><label  style="color:red;"> * </label>
-              <input type="text" class="form-control" id="title_th" placeholder="ใส่ภาษาไทย" value="{{$data->title_th}}">
+              <input type="text" class="form-control" id="title_th" name="title_th" placeholder="ใส่ภาษาไทย" value="{{$content->title_th}}" required>
               <div class="help-block-name help-block-name-th">กรุณากรอกชื่อเรื่อง</div>
             </div>
             <div class="form-group">
                 <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  (อังกฤษ)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="title_en" placeholder="ใส่ภาษาอังกฤษ" value="{{$data->title_en}}">
+                <input type="text" class="form-control" id="title_en" name="title_en" placeholder="ใส่ภาษาอังกฤษ" value="{{$content->title_en}}" required>
                 <div class="help-block-name help-block-name-en">กรุณากรอกชื่อเรื่อง</div>
             </div>
-              <div class="form-group">
-                <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  (จีน)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="title_ch" placeholder="ใส่ภาษาจีน" value="{{$data->title_ch}}">
-                <div class="help-block-name help-block-name-ch">กรุณากรอกชื่อเรื่อง</div>
-            </div>
+
             <div class="form-group">
                 <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (ไทย)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="name_th" placeholder="ใส่ภาษาไทย" value="{{$data->name_th}}">
+                <input type="text" class="form-control" id="detail_th" name="detail_th" placeholder="ใส่ภาษาไทย" value="{{$content->detail_th}}" required>
                 <div class="help-block-name-under help-block">กรุณากรอกข้อความแสดงใต้หัวเรื่อง</div>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (อังกฤษ)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="name_en" placeholder="ใส่ภาษาอังกฤษ" value="{{$data->name_en}}">
-                <div class="help-block-name-under help-block">กรุณากรอกข้อความแสดงใต้หัวเรื่อง</div>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (จีน)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="name_ch" placeholder="ใส่ภาษาจีน" value="{{$data->name_ch}}">
+                <input type="text" class="form-control" id="detail_en" name="detail_en" placeholder="ใส่ภาษาอังกฤษ" value="{{$content->detail_en}}" required>
                 <div class="help-block-name-under help-block">กรุณากรอกข้อความแสดงใต้หัวเรื่อง</div>
             </div>
 
+
             <div class="form-group">
-                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (ไทย)</label><label  style="color:red;"> * </label>
-                <textarea name="details_th"  id="details_th">{!! $data->detail_th !!}</textarea>
+                <label for="exampleInputUsername1">รายละเอียด (ไทย)</label><label  style="color:red;"> * </label>
+                <textarea name="desciption_en"  id="desciption_en">{{$content->desciption_en}}</textarea>
                 <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
               </div>
 
               <div class="form-group">
-                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (อังกฤษ)</label><label  style="color:red;"> * </label>
-                <textarea name="details_en"  id="details_en">{!! $data->detail_en !!}</textarea>
+                <label for="exampleInputUsername1">รายละเอียด (อังกฤษ)</label><label  style="color:red;"> * </label>
+                <textarea name="desciption_th"  id="desciption_th">{{$content->desciption_th}}</textarea>
                 <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
               </div>
 
-              <div class="form-group">
-                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (จีน)</label><label  style="color:red;"> * </label>
-                <textarea name="details_ch"  id="details_ch">{!! $data->detail_ch !!}</textarea>
-                <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
-              </div>
 
-              <div class="form-group">
-                <label for="exampleInputUsername1">URL  </label>
-                <input type="text" class="form-control" id="url" placeholder="Url" value="{{$data->url}}">
-              </div>
               <div class="form-group">
                 <label for="exampleInputUsername1">Keywords ใส่เครื่องหมาย (,) เพื่อคั่นประโยค  </label>
-                <input type="text" class="form-control" id="keyword" placeholder="Keyword" value="{{$data->keywords}}">
+                <input type="text" class="form-control" id="keyword" placeholder="Keyword"  value="{{$content->keyword}}">
               </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputUsername1">Upload รูปภาพ</label>
+                <input type="file" name="image_slide" id="image_slide" ><br>
+                <input type="hidden" class="form-control" name="images" id="images">
+                <img src="/public/product/{{$content->image}}" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
+              </div>
+
               <div class="form-group">
                 <label for="exampleInputUsername1">สถานะ </label>
-                <select class="form-control" id="status">
-                    <option value="Y" @if($data->status == 'Y'){{'selected'}}@endif>Active</option>
-                    <option value="N" @if($data->status == 'N'){{'selected'}}@endif>Isactive</option>
+                <select class="form-control" id="status" name="status">
+                    <option value="Y" @if($content->status == 'Y') selected @endif>Active</option>
+                    <option value="N" @if($content->status == 'N') selected @endif>Isactive</option>
                   </select>
               </div>
-            <button type="button" class="btn btn-info btn-lg btn-block btn-save">Save
+            <button type="submit" class="btn btn-info btn-lg btn-block btn-save">Save
                 <i class="typcn typcn-th-menu float-right"></i>
               </button>
+            </form>
         </div>
       </div>
     </div>
@@ -104,82 +101,139 @@
   <script type="text/javascript">
 
 
+var $link = "<?php echo url('/public/product/'); ?>";
+var $pub = "<?php echo url('/img/'); ?>";
 
-    CKEDITOR.replace('details_th', {
-            filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form',
-        });
+$("#image_slide").on('change', function(){
+        if ($('input[name ="image_slide"]').val() != '') {
+            var _URL = window.URL || window.webkitURL;
+            var file, img;
+            var file_data = $('input[name= "image_slide"]').prop('files')[0];
 
-        CKEDITOR.replace('details_en', {
-            filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form',
-        });
+            var _token = $('input#_token').val();
 
-        CKEDITOR.replace('details_ch', {
-            filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form',
-        });
-
-
-        $('body').on('click', '.btn-save', function () {
-
-
-     let valform = validateForm();
-
-
-
-     if(valform === true){
-
-        var title_th = $('#title_th').val();
-        var title_en = $('#title_en').val();
-        var title_ch = $('#title_ch').val();
-        var detail_th = CKEDITOR.instances.details_th.getData();
-        var detail_en = CKEDITOR.instances.details_en.getData();
-        var detail_ch = CKEDITOR.instances.details_ch.getData();
-        var url = $('#url').val();
-        var keyword = $('#keyword').val();
-        var status = $('#status').val();
-        var name_ch = $('#name_ch').val();
-        var name_th = $('#name_th').val();
-        var name_en = $('#name_en').val();
-        var id = $('#id').val();
-
-
-
-        $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
+            var form_data = new FormData();
+            if ((file = this.files[0])) {
+                img = new Image();
+                img.onload = function() {
+                    form_data.append('image_slide', file_data);
+                    form_data.append("_token", _token);
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
                     });
+                    $.ajax({
+                        url: '/admin/product/uploadimage',
+                        dataType: 'json',
+                        type: 'POST',
+                        data: form_data,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function success(resp) {
 
-                $.ajax({
-                    dataType: 'json',
-                    type:'PUT',
+;                               $('input[name=images]').val(resp.data);
+                                $('#showImageslide').attr("src", $link +'/'+ resp.data);
+swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
 
-                    data:{
-                        '_token': "{{ csrf_token() }}",
-                        title_th:title_th,title_en:title_en,title_ch:title_ch,detail_th:detail_th,detail_en:detail_en,detail_ch:detail_ch,url:url,keyword:keyword,status:status,name_ch:name_ch,name_th:name_th,name_en:name_en},
-                    url: '/admin/new/'+ id,
-                    success: function(datas){
+                        },
+                        error: function error(xhr, textStatus, errorThrown) {
 
+                            console.log(errorThrown);
+                        }
+                    });
+                };
+                img.onerror = function() {
+                    alert( "not a valid file: " + file.type);
+                };
+                img.src = _URL.createObjectURL(file);
+            }
+        }
+    })
 
-                        swal("แก้สำเร็จ!", "แก้สำเร็จ!", "success");
-
-                    }
-                })
-
-     }else {
-
-
-     }
-
-
+    CKEDITOR.replace('desciption_th', {
+            filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form',
         });
+
+        CKEDITOR.replace('desciption_en', {
+            filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form',
+        });
+
+
+
+
+//         $('body').on('click', '.btn-save', function () {
+
+
+//      let valform = validateForm();
+
+
+
+//      if(valform === true){
+
+//         var title_th = $('#title_th').val();
+//         var title_en = $('#title_en').val();
+//         var desciption_th = CKEDITOR.instances.desciption_th.getData();
+//         var desciption_en = CKEDITOR.instances.desciption_en.getData();
+//         var keyword = $('#keyword').val();
+//         var status = $('#status').val();
+//         var detail_th = $('#detail_th').val();
+//         var detail_en = $('#detail_en').val();
+//         var image = $('#images_slide').val();
+//         var id = $('#id').val();
+
+
+//         $.ajaxSetup({
+//                     headers: {
+//                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//                     }
+//                     });
+
+//                 $.ajax({
+//                     dataType: 'json',
+//                     type:'PUT',
+
+//                     data:{
+//                         '_token': "{{ csrf_token() }}",
+//                         title_th:title_th,title_en:title_en,desciption_th:desciption_th,desciption_en:desciption_en,keyword:keyword,status:status,detail_th:detail_th,detail_en:detail_en,image:image},
+//                     url: '/admin/new/' + id,
+//                     success: function(datas){
+
+//                       swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
+
+
+//         var title_th = $('#title_th').val('');
+//         var title_en = $('#title_en').val('');
+//         var title_ch = $('#title_ch').val('');
+//         var desciption_th = CKEDITOR.instances.desciption_th.setData();
+//         var desciption_en = CKEDITOR.instances.desciption_en.setData();
+//         var url = $('#url').val('');
+//         var keyword = $('#keyword').val('');
+//         var detail_th = $('#detail_th').val('');
+//         var detail_en = $('#detail_en').val('');
+
+
+//         $("#images").val('');
+//         $("#image_slide").val('');
+// $('#showImageslide').attr("src", $pub +'/'+ 'no_photo.jpg');
+
+
+//                     }
+//                 })
+
+//      }else {
+
+
+//      }
+
+//         });
 
         function validateForm(){
 var title_th = $('#title_th').val();
 var title_en = $('#title_en').val();
-var title_ch = $('#title_ch').val();
 
 
 
@@ -195,17 +249,13 @@ if(title_en == ''){
     $('.help-block-name-en').hide();
 }
 
-if(title_ch == ''){
-    $('.help-block-name-ch').show();
-}else {
-    $('.help-block-name-ch').hide();
-}
 
 
 
 
 
-if(title_th == '' || title_en == '' || title_ch == ''){
+
+if(title_th == '' || title_en == ''){
     return false;
 }else{
     return true;

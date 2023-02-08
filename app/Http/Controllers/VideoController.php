@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use Illuminate\Http\Request;
 
-class ActivityController extends Controller
+class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,15 +17,14 @@ class ActivityController extends Controller
         //
 
 
-        $data = Content::whereIn('status', ['Y', 'N'])->where('type','2')->orderBy('seq')->get();
-        $count = Content::whereIn('status', ['Y', 'N'])->where('type','2')->count();
-$min = Content::whereIn('status', ['Y', 'N'])->where('type','2')->min('seq');
-$max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
+        $data = Content::whereIn('status', ['Y', 'N'])->where('type','3')->orderBy('seq')->get();
+        $count = Content::whereIn('status', ['Y', 'N'])->where('type','3')->count();
+$min = Content::whereIn('status', ['Y', 'N'])->where('type','3')->min('seq');
+$max = Content::whereIn('status', ['Y', 'N'])->where('type','3')->max('seq');
 
 
-        return view('activity.index')->with('data',$data)->with('min',$min)->with('max',$max)->with('count',$count);
+        return view('video.index')->with('data',$data)->with('min',$min)->with('max',$max)->with('count',$count);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -35,8 +34,7 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
     public function create()
     {
         //
-
-        return view('activity.form');
+        return view('video.form');
     }
 
     /**
@@ -49,26 +47,23 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
     {
         //
 
-        $max = Content::where('type',2)->max('seq');
+
+        $max = Content::where('type',3)->max('seq');
 
 
         $ins = Content::create([
             'title_th' => $request->title_th,
             'title_en' => $request->title_en,
-            'desciption_th' => $request->desciption_th,
-            'desciption_en' => $request->desciption_en,
             'keyword' => $request->keyword,
             'detail_th' => $request->detail_th,
             'detail_en' => $request->detail_en,
-            'image' => $request->image,
-            'type' => 2,
+            'url' => $request->url,
+            'type' => 3,
             'seq' => $max+1,
             'status' => $request->status
         ]);
 
-
-
-           return response()->json([
+        return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1,
         ]);
@@ -95,9 +90,9 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
     {
         //
 
-        $datas = Content::where('type',2)->where('id',$id)->first();
+        $datas = Content::where('type',3)->where('id',$id)->first();
 
-        return view('activity.formedit')->with('content',$datas);
+        return view('video.formedit')->with('content',$datas);
     }
 
     /**
@@ -112,19 +107,17 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
         //
 
 
-        $updateseq = Content::where('id',$id)->where('type',2)->update([
+        $updateseq = Content::where('id',$id)->where('type',3)->update([
             'title_th' => $request->title_th,
             'title_en' => $request->title_en,
             'detail_th' => $request->detail_th,
             'detail_en' => $request->detail_en,
-            'image' => $request->images,
-            'desciption_th' => $request->desciption_th,
-            'desciption_en' => $request->desciption_en,
             'status' => $request->status,
             'keyword' => $request->keyword,
+            'url' => $request->url,
         ]);
 
-        return redirect()->route('activity.index')->with('success','System update successfully');
+        return redirect()->route('video.index')->with('success','System update successfully');
     }
 
     /**
@@ -138,25 +131,24 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
         //
 
 
-        $vat = Content::where('id',$id)->first();
-        $seq = Content::where('seq','>',$vat->seq)->where('type',2)->get();
-        $datase = $vat->seq;
-        foreach ($seq as $key => $seq) {
-            $updateseq = Content::where('id',$seq->id)->update([
-                'seq' => $datase
-            ]);
-
-            $datase++;
-        }
-
-     $delete = Content::where('id',$id)->delete();
-
-
-
-        return response()->json([
-            'msg_return' => 'ลบสำเร็จ',
-            'code_return' => 1,
+    $vat = Content::where('id',$id)->first();
+    $seq = Content::where('seq','>',$vat->seq)->where('type',3)->get();
+    $datase = $vat->seq;
+    foreach ($seq as $key => $seq) {
+        $updateseq = Content::where('id',$seq->id)->update([
+            'seq' => $datase
         ]);
-        }
+
+        $datase++;
     }
 
+ $delete = Content::where('id',$id)->delete();
+
+
+
+    return response()->json([
+        'msg_return' => 'ลบสำเร็จ',
+        'code_return' => 1,
+    ]);
+    }
+}

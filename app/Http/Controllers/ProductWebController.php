@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use Illuminate\Http\Request;
 
-class NewController extends Controller
+class ProductWebController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +16,13 @@ class NewController extends Controller
     {
 
 
-        $data = Content::whereIn('status', ['Y', 'N'])->where('type','1')->orderBy('seq')->get();
-        $count = Content::whereIn('status', ['Y', 'N'])->where('type','1')->count();
-$min = Content::whereIn('status', ['Y', 'N'])->where('type','1')->min('seq');
-$max = Content::whereIn('status', ['Y', 'N'])->where('type','1')->max('seq');
+        $data = Content::whereIn('status', ['Y', 'N'])->where('type','4')->orderBy('seq')->get();
+        $count = Content::whereIn('status', ['Y', 'N'])->where('type','4')->count();
+$min = Content::whereIn('status', ['Y', 'N'])->where('type','4')->min('seq');
+$max = Content::whereIn('status', ['Y', 'N'])->where('type','4')->max('seq');
 
 
-        return view('new.index')->with('data',$data)->with('min',$min)->with('max',$max)->with('count',$count);
+        return view('prod.index')->with('data',$data)->with('min',$min)->with('max',$max)->with('count',$count);
     }
 
     /**
@@ -36,7 +36,7 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','1')->max('seq');
 
 
 
-        return view('new.form');
+        return view('prod.form');
     }
 
     /**
@@ -50,7 +50,7 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','1')->max('seq');
         //
 
 
-        $max = Content::where('type',1)->max('seq');
+        $max = Content::where('type',4)->max('seq');
 
 
 $ins = Content::create([
@@ -62,7 +62,7 @@ $ins = Content::create([
     'detail_th' => $request->detail_th,
     'detail_en' => $request->detail_en,
     'image' => $request->image,
-    'type' => 1,
+    'type' => 4,
     'seq' => $max+1,
     'status' => $request->status
 ]);
@@ -96,9 +96,9 @@ $ins = Content::create([
     {
         //
 
-        $datas = Content::where('type',1)->where('id',$id)->first();
+        $datas = Content::where('type',4)->where('id',$id)->first();
 
-        return view('new.formedit')->with('content',$datas);
+        return view('prod.formedit')->with('content',$datas);
     }
 
     /**
@@ -125,7 +125,7 @@ $ins = Content::create([
         //     "status" => $request->status,
         // ]);
 
-        $updateseq = Content::where('id',$id)->where('type',1)->update([
+        $updateseq = Content::where('id',$id)->where('type',4)->update([
             'title_th' => $request->title_th,
             'title_en' => $request->title_en,
             'detail_th' => $request->detail_th,
@@ -137,7 +137,7 @@ $ins = Content::create([
             'keyword' => $request->keyword,
         ]);
 
-        return redirect()->route('new.index')->with('success','System update successfully');
+        return redirect()->route('product.index')->with('success','System update successfully');
     }
 
     /**
@@ -151,7 +151,7 @@ $ins = Content::create([
         //
 
     $vat = Content::where('id',$id)->first();
-    $seq = Content::where('seq','>',$vat->seq)->where('type',1)->get();
+    $seq = Content::where('seq','>',$vat->seq)->where('type',4)->get();
     $datase = $vat->seq;
     foreach ($seq as $key => $seq) {
         $updateseq = Content::where('id',$seq->id)->update([
@@ -171,3 +171,4 @@ $ins = Content::create([
     ]);
     }
 }
+

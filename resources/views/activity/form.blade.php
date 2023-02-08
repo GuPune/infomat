@@ -14,7 +14,7 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">แบบฟอร์ม ข่าวสาร</h4>
+          <h4 class="card-title">แบบฟอร์ม กิจกรรม</h4>
           <input type="hidden" id="_token" value="{{ csrf_token() }}">
             <div class="form-group">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  (ไทย)</label><label  style="color:red;"> * </label>
@@ -193,7 +193,7 @@ swal("บันทึกสำเร็จ!", "บันทึกสำเร็
                     data:{
                         '_token': "{{ csrf_token() }}",
                         title_th:title_th,title_en:title_en,desciption_th:desciption_th,desciption_en:desciption_en,keyword:keyword,status:status,detail_th:detail_th,detail_en:detail_en,image:image},
-                    url: '/admin/new',
+                    url: '/admin/activity',
                     success: function(datas){
 
                       swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");

@@ -83,7 +83,7 @@ Check the following errors :(  {{$errors->first()}}
                         @if($min == $items->seq)
                             <button
                                 class="btn btn-outline bg-success border-success text-success-800 btn-icon down"
-                                data-name="news" data-no="{{ $items->seq }}"
+                                data-name="activity" data-no="{{ $items->seq }}"
                                 data-popup="tooltip"
                                 title="เลื่อนตำแหน่งลง"
                                 data-placement="top"
@@ -94,7 +94,7 @@ Check the following errors :(  {{$errors->first()}}
                         @elseif($min < $items->seq && $items->seq < $count)
                             <button
                                 class="btn btn-outline bg-success border-success text-success-800 btn-icon up"
-                                data-name="news" data-no="{{ $items->seq }}"
+                                data-name="activity" data-no="{{ $items->seq }}"
                                 data-popup="tooltip"
                                 title="เลื่อนตำแหน่งขึ้น"
                                 data-placement="bottom"
@@ -106,7 +106,7 @@ Check the following errors :(  {{$errors->first()}}
                             </button>
                             <button
                                 class="btn btn-outline bg-success border-success text-success-800 btn-icon down"
-                                data-name="news" data-no="{{ $items->seq }}"
+                                data-name="activity" data-no="{{ $items->seq }}"
                                 data-popup="tooltip"
                                 title="เลื่อนตำแหน่งลง"
                                 data-placement="top"
@@ -118,7 +118,7 @@ Check the following errors :(  {{$errors->first()}}
                         @else
                             <button
                                 class="btn btn-outline bg-success border-success text-success-800 btn-icon up"
-                                data-name="news" data-no="{{ $items->seq }}"
+                                data-name="activity" data-no="{{ $items->seq }}"
                                 data-popup="tooltip"
                                 title="เลื่อนตำแหน่งขึ้น"
                                 data-placement="bottom"
@@ -129,7 +129,7 @@ Check the following errors :(  {{$errors->first()}}
                         @endif
                     </td>
                     <td>
-                        <a href="{{ url('/admin/new/' . $items->id . '/edit') }}" class="btn btn-warning editmdi btn-edit">แก้ไข</a>
+                        <a href="{{ url('/admin/activity/' . $items->id . '/edit') }}" class="btn btn-warning editmdi btn-edit">แก้ไข</a>
 
                         <button class="btn btn-danger btn-delete" data-id="{{ $items->id}}" data-popup="tooltip" title="ลบ" data-placement="bottom">
                             ลบ

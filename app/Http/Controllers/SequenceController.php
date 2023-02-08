@@ -18,7 +18,16 @@ class SequenceController extends Controller
             case "news":
                $sequence_a = Content::where('type',1)->where('seq',   $request->no)->first();
                $sequence_b = Content::where('type',1)->where('seq', --$request->no)->first();
-                break;
+            break;
+            case "activity":
+                $sequence_a = Content::where('type',2)->where('seq',   $request->no)->first();
+                $sequence_b = Content::where('type',2)->where('seq', --$request->no)->first();
+            break;
+
+            case "video":
+                $sequence_a = Content::where('type',3)->where('seq',   $request->no)->first();
+                $sequence_b = Content::where('type',3)->where('seq', --$request->no)->first();
+            break;
         endswitch;
 
        $sequence_a->seq = --$sequence_a->seq;
@@ -39,6 +48,16 @@ class SequenceController extends Controller
             case "news":
                $sequence_a = Content::where('type',1)->where('seq',   $request->no)->first();
                $sequence_b = Content::where('type',1)->where('seq', ++$request->no)->first();
+                break;
+
+            case "activity":
+                $sequence_a = Content::where('type',2)->where('seq',   $request->no)->first();
+                $sequence_b = Content::where('type',2)->where('seq', ++$request->no)->first();
+                 break;
+
+                 case "video":
+                    $sequence_a = Content::where('type',3)->where('seq',   $request->no)->first();
+                    $sequence_b = Content::where('type',3)->where('seq', ++$request->no)->first();
                 break;
         endswitch;
 
