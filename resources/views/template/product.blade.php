@@ -1,3 +1,6 @@
+@php
+$tmp = \App\Models\Content::where('status','Y')->where('type',4)->orderby('seq','asc')->take(4)->get();
+@endphp
 <div id="top_copy"> <h2>ผลิตภัณฑ์ของเรา</h2> </div>
 <br>
 
