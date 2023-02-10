@@ -170,4 +170,11 @@ $ins = Content::create([
         'code_return' => 1,
     ]);
     }
+
+    public function new()
+    {
+        $tmp = Content::where('status','Y')->where('type',1)->orderby('seq','asc')->get();
+        return view('front.new')->with('tmp',$tmp);
+
+    }
 }

@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewController;
+use App\Http\Controllers\ProductWebController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\ContactController;
 
 
 /*
@@ -36,6 +41,15 @@ Route::prefix('admin')->group(function () {
 Route::PATCH('sequence/up', [App\Http\Controllers\SequenceController::class, 'up']);
 Route::PATCH('sequence/down', [App\Http\Controllers\SequenceController::class, 'down']);
 });
+
+
+
+Route::get('/new', [NewController::class, 'new'])->name('new');
+Route::get('/activity', [ActivityController::class, 'activity'])->name('activity');
+Route::get('/video', [VideoController::class, 'video'])->name('video');
+Route::get('/product', [ProductWebController::class, 'product'])->name('product');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::post('/contact', [ContactController::class, 'save'])->name('contactsave');
 
 
 Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');

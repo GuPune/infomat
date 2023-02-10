@@ -17,13 +17,17 @@
 			<ul>
 
 									<li
-										><a class="select en" href="#">หน้าหลัก</a></li>
+										><a class="select en" href="/">หน้าหลัก</a></li>
 									<li
-										><a class=" en" href="#">เกี่ยวกับเรา</a></li>
+										><a class=" en" href="/product">ผลิตภัณฑ์</a></li>
 									<li
-										><a class="en" href="#">ข่าวสารและกิจกรรม</a></li>
+										><a class="en" href="/new">ข่าวสาร</a></li>
+                                        <li
+										><a class="en" href="/activity">กิจกรรม</a></li>
+                                        <li
+										><a class="en" href="/video">วีดีโอ</a></li>
 									<li
-										><a class=" en" href="#">ติดต่อเรา</a></li>
+										><a class=" en" href="/contact">ติดต่อเรา</a></li>
 
 
 							</ul>

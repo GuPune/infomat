@@ -158,5 +158,14 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
             'code_return' => 1,
         ]);
         }
+
+
+        public function activity()
+        {
+
+            $tmp = Content::where('status','Y')->where('type',2)->orderby('seq','asc')->get();
+            return view('front.activity')->with('tmp',$tmp);
+
+        }
     }
 

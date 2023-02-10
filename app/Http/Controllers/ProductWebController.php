@@ -170,5 +170,13 @@ $ins = Content::create([
         'code_return' => 1,
     ]);
     }
+
+
+    public function product()
+    {
+
+        $tmp = Content::where('status','Y')->where('type',4)->orderby('seq','asc')->get();
+        return view('front.product')->with('tmp',$tmp);
+    }
 }
 

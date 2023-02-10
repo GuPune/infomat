@@ -21,7 +21,7 @@ Check the following errors :(  {{$errors->first()}}
   <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <div class="card-header">ข้อมูลข่าว</div>
+            <div class="card-header">ข้อมูลผลิตภัณฑ์</div>
           <div class="card-body">
             <div class="table-responsive pt-3">
               <table id="myTable">

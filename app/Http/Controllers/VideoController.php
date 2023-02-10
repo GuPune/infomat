@@ -151,4 +151,11 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','3')->max('seq');
         'code_return' => 1,
     ]);
     }
+
+    public function video()
+        {
+
+            $tmp = Content::where('status','Y')->where('type',3)->orderby('seq','asc')->get();
+            return view('front.vdo')->with('tmp',$tmp);
+        }
 }
