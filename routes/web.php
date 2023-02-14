@@ -36,6 +36,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('activity', '\App\Http\Controllers\ActivityController');
     Route::resource('video', '\App\Http\Controllers\VideoController');
     Route::resource('product', '\App\Http\Controllers\ProductWebController');
+    Route::resource('banner', '\App\Http\Controllers\BannerController');
     Route::post('/product/uploadimage', [App\Http\Controllers\ProductController::class, 'upload']);
 
 Route::PATCH('sequence/up', [App\Http\Controllers\SequenceController::class, 'up']);

@@ -25,19 +25,19 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="typcn typcn-briefcase menu-icon"></i>
-          <span class="menu-title">รูปภาพ</span>
+          <span class="menu-title">แบนเนอร์</span>
           <i class="typcn typcn-chevron-right menu-arrow"></i>
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้เว็บไซค์</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/logoslide">ภาพสไลค์</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/logobrand">โลโก้แบรนด์</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/banner">ตั้งค่าแบนเนอร์</a></li>
+            {{-- <li class="nav-item"> <a class="nav-link" href="/admin/logoslide">ภาพสไลค์</a></li> --}}
+            {{-- <li class="nav-item"> <a class="nav-link" href="/admin/logobrand">โลโก้แบรนด์</a></li>
             <li class="nav-item"> <a class="nav-link" href="/admin/logoabout">ภาพสไลค์(เกี่ยวกับองค์กร)</a></li>
             <li class="nav-item"> <a class="nav-link" href="/admin/logocustomer">โลโก้ลูกค้าของเรา</a></li>
             <li class="nav-item"> <a class="nav-link" href="/admin/logocer">โลโก้การรับรอง</a></li>
             <li class="nav-item"> <a class="nav-link" href="/admin/logobussines">โลโก้ธุรกิจของเรา</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/bu">Business Unit</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/bu">Business Unit</a></li> --}}
           </ul>
         </div>
       </li>
