@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductWebController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LocalizationController;
 
 
 /*
@@ -51,7 +52,6 @@ Route::get('/video', [VideoController::class, 'video'])->name('video');
 Route::get('/product', [ProductWebController::class, 'product'])->name('product');
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'save'])->name('contactsave');
-
-
+Route::get('/change/{lang}', [LocalizationController::class, 'lang_change'])->name('LangChange');
 Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
@@ -17,7 +18,9 @@ class BannerController extends Controller
         // $tmp = Content::where('status','Y')->where('type',2)->orderby('seq','asc')->get();
         // return view('front.activity')->with('tmp',$tmp);
 
-        return view('banner.form');
+        $banner = Banner::first();
+
+        return view('banner.form')->with('banner',$banner);
     }
 
     /**
@@ -72,7 +75,18 @@ class BannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $updatebanner = Banner::where('id',$id)->update([
+            'link' => $request->link,
+            'image' => $request->image,
+            'type' => $request->type
+        ]);
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**

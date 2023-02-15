@@ -16,6 +16,7 @@ $tmp = \App\Models\Content::where('status','Y')->where('type',1)->orderby('seq',
       </div>
       @endforeach
     </div>
+    <br>
       <div class="container text-center">
         <button type="button" class="btn btn-outline-dark ">ข่าวสารทั้งหมด</button>
       </div>

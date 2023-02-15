@@ -3,8 +3,15 @@ $tmp = \App\Models\Content::where('status','Y')->where('type',4)->orderby('seq',
 
 $x = \App\Models\Content::where('status','Y')->where('type',4)->orderby('seq','asc')->take(4)->get();
 @endphp
-<div id="top_copy"> <h2>ผลิตภัณฑ์ของเรา</h2> </div>
-<br>
+
+<div id="top_copy" class="text-dark text-center"> <br> <h2>
+@if (session()->get('locale') == 'th')
+ผลิตภัณฑ์ของเรา
+@else
+Product ALL
+@endif
+
+</h2> </div>
 
 <div style="margin: 30px;">
   <div class="row align-items-start">
@@ -72,8 +79,17 @@ $x = \App\Models\Content::where('status','Y')->where('type',4)->orderby('seq','a
   </div>
 
   <div class="container text-center">
-    <button type="button" class="btn btn-outline-dark ">ผลิตภัณฑ์ทั้งหมด</button>
+    <button type="button" class="btn btn-outline-dark ">
+
+@if (session()->get('locale') == 'th')
+        ผลิตภัณฑ์ทั้งหมด
+@else
+Product ALL
+@endif
+
+    </button>
   </div><br>
 
+</div>
 </div>
 </div>

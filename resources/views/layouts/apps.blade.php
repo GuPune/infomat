@@ -149,31 +149,35 @@
         flex-direction: column;
       }}
     </style>
-
+@php
+$tmp = \App\Models\Banner::first();
+@endphp
 
 <body class="en gallery dining">
 
     @include('template.navbar')
 
 
+{{--
+@if ($tmp->type == 'I')
 <div id="main">
-
 	<div id="movie_area">
-
 		<div id="top_title">
-			<h2>NONG-HIN </h2>
+			<h2>NONG-HIN MULBERRY </h2>
 					</div>
 
 		<div id="top_video_wrap">
 		<div class="gradient"></div>
-	<video class="full_resize" preload="none" loop="loop" muted="muted" playsinline="" preload="auto"
-
-  poster="img/หนองหินมัลเบอร์รี่เฮาส์/122809524_141499897664004_7844290338621171893_n.jpg">
+	<video class="full_resize" preload="none" loop="loop" muted="muted" playsinline="" preload="auto" poster="/public/product/{{$tmp->image}}">
 	<source src="http://127.0.0.1:8000/x1.mov" type="video/mp4">
 	</video>
 </div>
-
 	</div>
+</div>
+
+@else
+
+@endif --}}
 
 
     @if (Request::is('/'))

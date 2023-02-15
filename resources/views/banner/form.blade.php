@@ -16,61 +16,44 @@
         <div class="card-body">
           <h4 class="card-title">ตั้งค่า Banner</h4>
           <input type="hidden" id="_token" value="{{ csrf_token() }}">
-            <div class="form-group">
-              <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  (ไทย)</label><label  style="color:red;"> * </label>
-              <input type="text" class="form-control" id="title_th" placeholder="ใส่ภาษาไทย">
-              <div class="help-block-name help-block-name-th">กรุณากรอกชื่อเรื่อง</div>
+          <input type="text" id="id" name="id" value="{{$banner->id}}">
+
+
+
+
+            <div id="youtube">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="inputEmail4">Youtube ลิงค์</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="url"  id="url" value="{{$banner->link}}">
+                        </div>
+                        <div class="help-block-link">กรุณากรอก URL</div>
+                        <label for="inputEmail4">ตัวอย่าง. https://www.youtube.com/watch?v=ks18SVYOIrE</label>
+                    </div>
+                </div>
+
+                <div  id="rx" class="row" >
+                    <div class="col-12">
+                        <iframe width="420" height="345" id="calendar" src="{{$banner->link}}">
+                        </iframe>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  (อังกฤษ)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="title_en" placeholder="ใส่ภาษาอังกฤษ">
-                <div class="help-block-name help-block-name-en">กรุณากรอกชื่อเรื่อง</div>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (ไทย)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="detail_th" placeholder="ใส่ภาษาไทย">
-                <div class="help-block-name-under help-block">กรุณากรอกข้อความแสดงใต้หัวเรื่อง</div>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง (อังกฤษ)</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="detail_en" placeholder="ใส่ภาษาอังกฤษ">
-                <div class="help-block-name-under help-block">กรุณากรอกข้อความแสดงใต้หัวเรื่อง</div>
-            </div>
-
-
-            <div class="form-group">
-                <label for="exampleInputUsername1">รายละเอียด (ไทย)</label><label  style="color:red;"> * </label>
-                <textarea name="desciption_en"  id="desciption_en"></textarea>
-                <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputUsername1">รายละเอียด (อังกฤษ)</label><label  style="color:red;"> * </label>
-                <textarea name="desciption_th"  id="desciption_th"></textarea>
-                <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
-              </div>
-
-
-              <div class="form-group">
-                <label for="exampleInputUsername1">Keywords ใส่เครื่องหมาย (,) เพื่อคั่นประโยค  </label>
-                <input type="text" class="form-control" id="keyword" placeholder="Keyword">
-              </div>
 
 
               <div class="form-group">
                 <label for="exampleInputUsername1">Upload รูปภาพ</label>
                 <input type="file" name="image_slide" id="image_slide" ><br>
-                <input type="hidden" class="form-control" name="images" id="images">
+                <input type="text" class="form-control" name="images" id="images">
                 <img src="/img/no_photo.jpg" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
               </div>
 
               <div class="form-group">
-                <label for="exampleInputUsername1">สถานะ </label>
-                <select class="form-control" id="status">
-                    <option value="Y">Active</option>
-                    <option value="N">Isactive</option>
+                <label for="exampleInputUsername1">ประเภท </label>
+                <select class="form-control" id="type">
+                    <option value="I">รูปภาพ</option>
+                    <option value="V">วีดีโอ</option>
                   </select>
               </div>
             <button type="button" class="btn btn-info btn-lg btn-block btn-save">Save
@@ -82,7 +65,7 @@
   </div>
 
   <style type="text/css">
-    .help-block-name,.help-block-name-th,.help-block-name-en,.help-block-name-ch,.help-block-des,.help-block-tel,.help-block-email,.help-block-name-under,.help-block-gende,.help-block-name-en,.help-block-name-th,.help-block-stock,.help-block-price,.help-block-sku,.help-block-barcode,.help-block-image_thump,.help-block-image_zoom,.help-block-image{
+    .help-block-link,.help-block-name-th,.help-block-name-en,.help-block-name-ch,.help-block-des,.help-block-tel,.help-block-email,.help-block-name-under,.help-block-gende,.help-block-name-en,.help-block-name-th,.help-block-stock,.help-block-price,.help-block-sku,.help-block-barcode,.help-block-image_thump,.help-block-image_zoom,.help-block-image{
         display: none;
         color: red;
         text-align: center;
@@ -98,6 +81,36 @@
 
 var $link = "<?php echo url('/public/product/'); ?>";
 var $pub = "<?php echo url('/img/'); ?>";
+
+
+$( "#url" ).keyup(function() {
+    var url = $('#url').val();
+    let text = url;
+
+var z = text.substring(0, 32);
+
+
+let b = text.substring(32);
+let y = 'https://www.youtube.com/embed/'+b
+
+if(z == 'https://www.youtube.com/watch?v='){
+    var url = $('#url').val(y);
+    document.getElementById('calendar').src = y;
+    document.getElementById("rx").style.display = "block";
+}else{
+
+     $('#url').val(url);
+    document.getElementById('calendar').src = url;
+    document.getElementById("rx").style.display = "block";
+
+}
+
+
+    // document.getElementById('calendar').src = y;
+    // var target = $('#target').val(y);
+
+
+});
 
 $("#image_slide").on('change', function(){
         if ($('input[name ="image_slide"]').val() != '') {
@@ -147,15 +160,8 @@ swal("บันทึกสำเร็จ!", "บันทึกสำเร็
         }
     })
 
-    CKEDITOR.replace('desciption_th', {
-            filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form',
-        });
 
-        CKEDITOR.replace('desciption_en', {
-            filebrowserUploadUrl: "{{route('uploadx', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form',
-        });
+
 
 
 
@@ -168,16 +174,10 @@ swal("บันทึกสำเร็จ!", "บันทึกสำเร็
 
 
      if(valform === true){
-
-        var title_th = $('#title_th').val();
-        var title_en = $('#title_en').val();
-        var desciption_th = CKEDITOR.instances.desciption_th.getData();
-        var desciption_en = CKEDITOR.instances.desciption_en.getData();
-        var keyword = $('#keyword').val();
-        var status = $('#status').val();
-        var detail_th = $('#detail_th').val();
-        var detail_en = $('#detail_en').val();
+        var id = $('#id').val();
+        var link = $('#url').val();
         var image = $('#images').val();
+        var type = $('#type').val();
 
 
         $.ajaxSetup({
@@ -188,31 +188,17 @@ swal("บันทึกสำเร็จ!", "บันทึกสำเร็
 
                 $.ajax({
                     dataType: 'json',
-                    type:'POST',
+                    type:'PUT',
 
                     data:{
                         '_token': "{{ csrf_token() }}",
-                        title_th:title_th,title_en:title_en,desciption_th:desciption_th,desciption_en:desciption_en,keyword:keyword,status:status,detail_th:detail_th,detail_en:detail_en,image:image},
-                    url: '/admin/activity',
+                        link:link,image:image,type:type,id:id},
+                    url: '/admin/banner/' + id,
                     success: function(datas){
 
                       swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
 
 
-        var title_th = $('#title_th').val('');
-        var title_en = $('#title_en').val('');
-        var title_ch = $('#title_ch').val('');
-        var desciption_th = CKEDITOR.instances.desciption_th.setData();
-        var desciption_en = CKEDITOR.instances.desciption_en.setData();
-        var url = $('#url').val('');
-        var keyword = $('#keyword').val('');
-        var detail_th = $('#detail_th').val('');
-        var detail_en = $('#detail_en').val('');
-
-
-        $("#images").val('');
-        $("#image_slide").val('');
-$('#showImageslide').attr("src", $pub +'/'+ 'no_photo.jpg');
 
 
                     }
@@ -226,21 +212,20 @@ $('#showImageslide').attr("src", $pub +'/'+ 'no_photo.jpg');
         });
 
         function validateForm(){
-var title_th = $('#title_th').val();
-var title_en = $('#title_en').val();
+            var link = $('#url').val();
+        var image = $('#images').val();
 
 
-
-if(title_th == ''){
-    $('.help-block-name-th').show();
+if(link == ''){
+    $('.help-block-link').show();
 }else {
-    $('.help-block-name-th').hide();
+    $('.help-block-link').hide();
 }
 
-if(title_en == ''){
-    $('.help-block-name-en').show();
+if(image == ''){
+    $('.help-block-image').show();
 }else {
-    $('.help-block-name-en').hide();
+    $('.help-block-image').hide();
 }
 
 
@@ -249,7 +234,7 @@ if(title_en == ''){
 
 
 
-if(title_th == '' || title_en == ''){
+if(link == '' || image == ''){
     return false;
 }else{
     return true;
