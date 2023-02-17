@@ -29,7 +29,15 @@ $post = \App\Models\Content::where('status','Y')->where('type',2)->inRandomOrder
 
 
 
-<div id="top_copy" class="text-dark text-center"> <br> <h2>กิจกรรมของเรา</h2> </div>
+<div id="top_copy" class="text-dark text-center"> <br> <h2>
+
+@if (session()->get('locale') == 'th')
+    กิจกรรมของเรา
+@else
+Activities ALL
+@endif
+</h2>
+</div>
 <div style="margin: 30px;">
   <div class="row align-items-start">
     @foreach($tmp as $tmps)
@@ -41,7 +49,16 @@ $post = \App\Models\Content::where('status','Y')->where('type',2)->inRandomOrder
   <br>
 
   <div class="container text-center">
-  <button type="button" class="btn btn-outline-dark">กิจกรรมทั้งหมด</button>
+    <a href="/activity">
+  <button type="button" class="btn btn-outline-dark">
+    @if (session()->get('locale') == 'th')
+    กิจกรรมทั้งหมด
+@else
+Activities ALL
+@endif
+
+</button>
+</a>
   </div><br>
 
 </div>

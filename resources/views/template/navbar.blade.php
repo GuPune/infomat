@@ -60,7 +60,6 @@ body.gallery div#top_titlea {
                 TH
             </a>
         </li>
-        {{ session()->get('locale') }}
     </ul>
 
 

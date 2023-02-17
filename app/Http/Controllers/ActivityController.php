@@ -83,6 +83,18 @@ $max = Content::whereIn('status', ['Y', 'N'])->where('type','2')->max('seq');
     public function show($id)
     {
         //
+
+    }
+
+    public function oneshow($id)
+    {
+        //
+
+        $texs = Content::where('id',$id)->first();
+
+
+
+        return view('front.content')->with('data',$texs);
     }
 
     /**

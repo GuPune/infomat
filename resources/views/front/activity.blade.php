@@ -8,6 +8,8 @@
 <div style="margin: 30px;">
     <div class="row row-cols-1 row-cols-md-4 g-5">
     @foreach($tmp as $tmps)
+    <a href="/activity/{{$tmps->id}}">
+
       <div class="col">
         <div class="card">
           <img src="/public/product/{{$tmps->image}}" class="card-img-top" alt="...">
@@ -17,6 +19,7 @@
             <p class="card-text">{{$tmps->title_th}}</p>
           </div>
       </div>
+    </a>
       @endforeach
     </div>
 </div>

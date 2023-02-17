@@ -14,22 +14,22 @@
 	<script src="https://nipponia-kosuge.jp/wp/wp-content/themes/kosuge_v2/lib/html5shiv.min.js"></script>
 	<![endif]-->
 
-	<meta name="keywords" content="小菅 源流の村,小菅村,山梨県,ホテル,多摩川,700人の村がひとつのホテルに。700人,NIPPONIA,KOSUGE,Hotel">
+	<meta name="keywords" content="หนองหินมัลเบอร์รี่">
 	<link rel="shortcut icon" href="https://nipponia-kosuge.jp/wp/wp-content/themes/kosuge_v2/assets/images/favicon.ico">
-	<meta name="description" content="多摩川源流、700人の村が一つのホテルに。多摩川源流に位置する小菅村は、東京都心から車で約2時間。面積の95％が森林と豊かな自然に囲まれた人口約700人の小さな村です。日本の原風景が多く残るNIPPONIA（ニッポニア）小菅 源流の村で自然に寄り添う暮らしを体感する。">
-	<meta property="og:title" content="NIPPONIA（ニッポニア）小菅 源流の村｜700人の村がひとつのホテルに。分散型古民家ホテル">
-	<meta property="og:description" content="多摩川源流、700人の村が一つのホテルに。多摩川源流に位置する小菅村は、東京都心から車で約2時間。面積の95％が森林と豊かな自然に囲まれた人口約700人の小さな村です。日本の原風景が多く残るNIPPONIA（ニッポニア）小菅 源流の村で自然に寄り添う暮らしを体感する。">
+	<meta name="description" content="หนองหินมัลเบอร์รี่">
+	<meta property="og:title" content="หนองหินมัลเบอร์รี่">
+	<meta property="og:description" content="หนองหินมัลเบอร์รี่">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://nipponia-kosuge.jp/en">
-	<meta property="og:image" content="https://nipponia-kosuge.jp/wp/wp-content/themes/kosuge_v2/assets/images/og.jpg">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 
 	<meta name="twitter:card" content="photo">
-		<meta name="twitter:title" content="NIPPONIA（ニッポニア）小菅 源流の村｜700人の村がひとつのホテルに。分散型古民家ホテル">
-	<meta name="twitter:image:src" content="https://nipponia-kosuge.jp/wp/wp-content/themes/kosuge_v2/assets/images/og.jpg">
-	<meta name="twitter:domain" content="nipponia-kosuge.jp">
-	<meta property="fb:app_id" content="322262362512936">
+		<meta name="twitter:title" content="">
+	<meta name="twitter:image:src" content="">
+	<meta name="twitter:domain" content="">
+	<meta property="fb:app_id" content="">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 
 	<title>หนองหินมัลเบอร์รี่เฮาส์ ท่องเที่ยวชุมชนบ้านหนองหิน</title>
@@ -153,6 +153,131 @@
 $tmp = \App\Models\Banner::first();
 @endphp
 
+<a id="bt_gnav_open" class="">
+
+	<div class="element">
+		<div class="icon">
+			<div class="line">
+				<div class="white"></div>
+				<div class="black"></div>
+			</div>
+			<div class="line">
+				<div class="white"></div>
+				<div class="black"></div>
+			</div>
+			<div class="line">
+				<div class="white"></div>
+				<div class="black"></div>
+			</div>
+		</div>
+				<p><span class="ja">メニュー</span><span class="en">Menu</span></p>
+	</div>
+
+</a>
+
+
+
+<nav id="gnav">
+
+	<div class="inner">
+
+		<a id="title" href="https://nipponia-kosuge.jp/en/">
+
+			<h1>Nong - Hin<span style='margin-left: -0.2em'></span></h1>
+
+			<p>MulberryHouse</p>
+		</a>
+
+		<div class="nav">
+            @if (session()->get('locale') == 'th')
+			<ul>
+                <li><a class="select en" href="/">
+                    {{ trans('multi.Home_TH') }}
+                </a>
+            </li>
+            <li
+                ><a class=" en" href="/product">
+                    {{ trans('multi.Pro_TH') }}
+                </a></li>
+            <li
+                ><a class="en" href="/new">
+                    {{ trans('multi.New_TH') }}
+                </a></li>
+                <li
+                ><a class="en" href="/activity">
+
+                    {{ trans('multi.Activity_TH') }}
+                </a></li>
+                <li
+                ><a class="en" href="/video">
+
+                    {{ trans('multi.Vdo_TH') }}
+                </a></li>
+            <li
+                ><a class=" en" href="/contact">
+                    {{ trans('multi.Contact_TH') }}
+                </a></li>
+							</ul>
+
+                            @else
+
+                        <ul>
+                            <li
+                            ><a class="select en" href="/">
+                                {{ trans('multi.Home') }}
+                            </a></li>
+                        <li
+                            ><a class=" en" href="/product">
+                                {{ trans('multi.Pro') }}
+                            </a></li>
+                        <li
+                            ><a class="en" href="/new">
+                                {{ trans('multi.New') }}
+                            </a></li>
+                            <li
+                            ><a class="en" href="/activity">
+
+                                {{ trans('multi.Activity') }}
+                            </a></li>
+                            <li
+                            ><a class="en" href="/video">
+
+                                {{ trans('multi.Vdo') }}
+                            </a></li>
+                        <li
+                            ><a class=" en" href="/contact">
+
+                                {{ trans('multi.Contact') }}
+                            </a></li>
+
+                        </ul>
+
+
+
+                            @endif
+
+		</div>
+
+		<ul class="bt_language clearfix">
+
+			<li class="title"><span>LANGUAGES : </span></li>
+
+			<li >
+				<a href="/change/en" class="ja">EN</a>
+            </li>
+			<li >
+				<a href="/change/th" class="ja">TH</a>
+            </li>
+
+		</ul>
+
+	</div>
+
+	<a id="bt_gnav_close"></a>
+
+	<div id="gnav_bg"></div>
+
+</nav>
 <body class="en gallery dining">
 
     @include('template.navbar')

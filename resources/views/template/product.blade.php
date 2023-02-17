@@ -79,6 +79,7 @@ Product ALL
   </div>
 
   <div class="container text-center">
+    <a href="/product">
     <button type="button" class="btn btn-outline-dark ">
 
 @if (session()->get('locale') == 'th')
@@ -88,7 +89,9 @@ Product ALL
 @endif
 
     </button>
-  </div><br>
+    </a>
+  </div>
+  <br>
 
 </div>
 </div>

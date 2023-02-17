@@ -5,7 +5,16 @@ $tmp = \App\Models\Content::where('status','Y')->where('type',3)->orderby('seq',
 
 @endphp
 
-<div id="top_copy" class="text-dark text-center"> <br> <h2>วีดีโอ</h2> </div>
+<div id="top_copy" class="text-dark text-center"> <br> <h2>
+
+
+    @if (session()->get('locale') == 'th')
+    วีดีโอ
+@else
+VDO
+@endif
+
+</h2> </div>
 <div style="margin: 30px;">
   <div class="row align-items-start">
     @foreach($tmp as $tmps)
@@ -17,7 +26,15 @@ $tmp = \App\Models\Content::where('status','Y')->where('type',3)->orderby('seq',
   <br>
 
   <div class="container text-center">
-  <button type="button" class="btn btn-outline-dark">วีดีโอทั้งหมด</button>
+    <a href="/video">
+  <button type="button" class="btn btn-outline-dark">
+    @if (session()->get('locale') == 'th')
+    วีดีโอทั้งหมด
+@else
+VDO ALL
+@endif
+</button>
+</a>
   </div><br>
 
 </div>

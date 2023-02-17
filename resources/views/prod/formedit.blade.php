@@ -66,7 +66,7 @@
               <div class="form-group">
                 <label for="exampleInputUsername1">Upload รูปภาพ</label>
                 <input type="file" name="image_slide" id="image_slide" ><br>
-                <input type="hidden" class="form-control" name="images" id="images">
+                <input type="hidden" class="form-control" name="images" id="images" value="{{$content->image}}">
                 <img src="/public/product/{{$content->image}}" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
               </div>
 
@@ -93,7 +93,7 @@
         text-align: center;
     }
 </style>
-  <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.20.2/full/ckeditor.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>

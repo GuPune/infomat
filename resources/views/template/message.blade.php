@@ -1,7 +1,17 @@
 @php
 $tmp = \App\Models\Content::where('status','Y')->where('type',1)->orderby('seq','asc')->take(4)->get();
 @endphp
+<div id="top_copy" class="text-dark text-center"> <br> <h2>
 
+
+
+    @if (session()->get('locale') == 'th')
+    ข่าวสาร
+@else
+NEWS
+@endif
+
+</h2> </div>
 <div style="margin: 30px;">
     <div class="row row-cols-1 row-cols-md-4 g-5">
     @foreach($tmp as $tmps)
@@ -18,7 +28,19 @@ $tmp = \App\Models\Content::where('status','Y')->where('type',1)->orderby('seq',
     </div>
     <br>
       <div class="container text-center">
-        <button type="button" class="btn btn-outline-dark ">ข่าวสารทั้งหมด</button>
+        <a href="/new">
+        <button type="button" class="btn btn-outline-dark ">
+
+            @if (session()->get('locale') == 'th')
+            ข่าวสารทั้งหมด
+        @else
+        NEWS ALL
+        @endif
+
+
+
+        </button>
+        </a>
       </div>
       <br>
 

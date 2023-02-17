@@ -48,6 +48,7 @@ Route::PATCH('sequence/down', [App\Http\Controllers\SequenceController::class, '
 
 Route::get('/new', [NewController::class, 'new'])->name('new');
 Route::get('/activity', [ActivityController::class, 'activity'])->name('activity');
+Route::get('/activity/{id}', [ActivityController::class, 'oneshow'])->name('activity.oneshow');
 Route::get('/video', [VideoController::class, 'video'])->name('video');
 Route::get('/product', [ProductWebController::class, 'product'])->name('product');
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
