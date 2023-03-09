@@ -18,7 +18,7 @@
 	<link rel="shortcut icon" href="https://nipponia-kosuge.jp/wp/wp-content/themes/kosuge_v2/assets/images/favicon.ico">
 	<meta name="description" content="หนองหินมัลเบอร์รี่">
 	<meta property="og:title" content="หนองหินมัลเบอร์รี่">
-	<meta property="og:description" content="หนองหินมัลเบอร์รี่">
+	<meta property="og:description" content="หนองหินมัลเบอร์รี่เฮาส์ ท่องเที่ยวชุมชนบ้านหนองหิน จ.มหาสารคาม">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="">
 	<meta property="og:image" content="">
