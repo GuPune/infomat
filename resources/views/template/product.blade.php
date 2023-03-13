@@ -18,7 +18,7 @@ Product ALL
     @foreach($tmp as $tmps)
     <div class="col-4">
     <div class="card" >
-       <img src="img/หนองหินมัลเบอร์รี่เฮาส์/268802550_394644252349566_1235860328743203525_n.jpg"  style="border-radius: 8px;"  class="card-img-top" alt="..." >
+       <img src="/public/product/{{$tmpa->image}}"  style="border-radius: 8px;"  class="card-img-top" alt="..." >
     </div>
     </div>
     @endforeach
@@ -38,7 +38,7 @@ Product ALL
   @foreach($tmp as $tmps)
   <div class="row g-0">
     <div class="col-md-3">
-      <img src="img/หนองหินมัลเบอร์รี่เฮาส์/268802550_394644252349566_1235860328743203525_n.jpg" class="img-fluid rounded-start" alt="...">
+      <img src="/public/product/{{$tmpa->image}}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
