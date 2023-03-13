@@ -16,7 +16,7 @@
         <div class="card-body">
           <h4 class="card-title">ตั้งค่า Banner</h4>
           <input type="hidden" id="_token" value="{{ csrf_token() }}">
-          <input type="text" id="id" name="id" value="{{$banner->id}}">
+          <input type="hidden" id="id" name="id" value="{{$banner->id}}">
 
 
 
@@ -45,7 +45,7 @@
               <div class="form-group">
                 <label for="exampleInputUsername1">Upload รูปภาพ</label>
                 <input type="file" name="image_slide" id="image_slide" ><br>
-                <input type="text" class="form-control" name="images" id="images">
+                <input type="hidden" class="form-control" name="images" id="images">
                 <img src="/img/no_photo.jpg" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
               </div>
 

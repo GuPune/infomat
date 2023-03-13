@@ -132,7 +132,7 @@
           </div>
       </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-multi" aria-expanded="false" aria-controls="form-multi">
             <i class="typcn typcn-globe-outline menu-icon"></i>
           <span class="menu-title">ตั้งค่าภาษา </span>
@@ -147,5 +147,5 @@
               <li class="nav-item"> <a class="nav-link" href="/admin/title">Title</a></li>
             </ul>
           </div>
-      </li>
+      </li> --}}
   </nav>
