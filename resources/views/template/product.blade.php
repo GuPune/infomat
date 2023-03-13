@@ -62,7 +62,7 @@ Product ALL
             @foreach($x as $tmpa)
           <div class="col-6 col-sm-6">
             <div class="card" >
-              <img src="img/หนองหินมัลเบอร์รี่เฮาส์/268802550_394644252349566_1235860328743203525_n.jpg"  style="border-radius: 8px;"  class="card-img-top" alt="..." >
+              <img src="/public/product/{{$tmpa->image}}"  style="border-radius: 8px;"  class="card-img-top" alt="..." >
             </div>
           </div>
           @endforeach
