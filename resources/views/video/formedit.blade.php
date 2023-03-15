@@ -105,6 +105,36 @@
 var $link = "<?php echo url('/public/product/'); ?>";
 var $pub = "<?php echo url('/img/'); ?>";
 
+
+$( "#url" ).keyup(function() {
+    var url = $('#url').val();
+    let text = url;
+
+var z = text.substring(0, 32);
+
+
+let b = text.substring(32);
+let y = 'https://www.youtube.com/embed/'+b
+
+if(z == 'https://www.youtube.com/watch?v='){
+    var url = $('#url').val(y);
+    document.getElementById('calendar').src = y;
+    document.getElementById("rx").style.display = "block";
+}else{
+
+     $('#url').val(url);
+    document.getElementById('calendar').src = url;
+    document.getElementById("rx").style.display = "block";
+
+}
+
+
+    // document.getElementById('calendar').src = y;
+    // var target = $('#target').val(y);
+
+
+});
+
 $("#image_slide").on('change', function(){
         if ($('input[name ="image_slide"]').val() != '') {
             var _URL = window.URL || window.webkitURL;

@@ -1,8 +1,7 @@
 <div class="top clearfix">
 
     <div class="left">
-        <a href="https://nipponia-kosuge.jp/en/">
-            <img src="https://nipponia-kosuge.jp/wp/wp-content/themes/kosuge_v2/assets/images/logo_nipponia_white.svg" alt="NONG-HIN" width="129">
+        <a href="#">
             <h5>หนองหินมัลเบอร์รี่เฮาส์ </h5>
         </a>
 
