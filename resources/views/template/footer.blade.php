@@ -6,8 +6,6 @@
 				<li><a href="#">Company Overview</a></li>
 				<li><a href="#">Privacy Policy</a></li>
 			</ul>
-
-
 		</div>
 
 		<div class="right">Copyright © EDGE CO., LTD All Rights Reserved.</div>
